@@ -10,6 +10,14 @@ from pwinput import pwinput
 from catalystwan.session import create_manager_session
 from catalystwan.utils.alarm_status import Severity
 from catalystwan.utils.personality import Personality
+from catalystwan.exceptions import (
+    DefaultPasswordError,
+    ManagerHTTPError,
+    ManagerReadyTimeout,
+    ManagerRequestException,
+    SessionNotCreatedError,
+    TenantSubdomainNotFound,
+)
 
 
 # Standard libraries
