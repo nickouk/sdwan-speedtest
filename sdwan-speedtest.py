@@ -53,7 +53,12 @@ devices = session.api.devices.get()
 while True:
     while True:
         try:
-            request_ip = ipaddress.ip_address(input("Enter system IP address to run speedtest from: "))
+            request_ip = input("Enter system IP address to run speedtest from or press [ENTER] to exit this tool: ")
+            if request_ip == "":
+                print("\nClosing the session")
+                session.close()
+                quit()
+            request_ip = ipaddress.ip_address(request_ip)
             break
         except ValueError:
             continue
